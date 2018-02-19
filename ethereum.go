@@ -16,5 +16,7 @@ func pubKeysToAddress(pubPoint Point) (string){
 	tt,_ :=hex.DecodeString(allHex)
 	hasher.Write(tt)
 	summ := hasher.Sum(nil)
-	return "0x"+hex.EncodeToString(summ)
+	encdd := hex.EncodeToString(summ)
+	lastAddr := encdd[24:]
+	return "0x"+lastAddr
 }
